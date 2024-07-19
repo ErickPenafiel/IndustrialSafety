@@ -7,61 +7,104 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# Sistema de Seguridad Industrial
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Este proyecto es una aplicación web desarrollada con Laravel 10 que tiene como objetivo mejorar la gestión de seguridad industrial. La aplicación permite el registro de accidentes, auditorías, fotos, documentos, capacitaciones, comités, dotaciones, insumos, IPER (Identificación de Peligros y Evaluación de Riesgos), maquinaria, mantenimiento de maquinaria, reuniones y trabajadores. Además, ofrece visualización gráfica de los datos y emite notificaciones cuando se terminan los insumos a todos los usuarios registrados en el sistema.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Características
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Registro de accidentes
+- Gestión de auditorías
+- Almacenamiento de fotos y documentos
+- Gestión de capacitaciones y comités
+- Control de dotaciones e insumos
+- Identificación de Peligros y Evaluación de Riesgos (IPER)
+- Gestión de maquinaria y su mantenimiento
+- Programación y registro de reuniones
+- Gestión de trabajadores
+- Visualización de datos en gráficas
+- Emisión de notificaciones para insumos
 
-## Learning Laravel
+## Requisitos
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- PHP >= 8.1
+- Composer
+- MySQL o cualquier otra base de datos compatible
+- Node.js y npm (para la compilación de activos front-end)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Instalación
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. Clona este repositorio:
 
-## Laravel Sponsors
+    ```bash
+    git clone https://github.com/tu_usuario/tu_repositorio.git
+    cd tu_repositorio
+    ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+2. Instala las dependencias de PHP con Composer:
 
-### Premium Partners
+    ```bash
+    composer install
+    ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+3. Instala las dependencias de Node.js:
 
-## Contributing
+    ```bash
+    npm install
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. Copia el archivo `.env.example` a `.env` y configura las variables de entorno, incluyendo la conexión a la base de datos:
 
-## Code of Conduct
+    ```bash
+    cp .env.example .env
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+5. Genera la clave de la aplicación:
 
-## Security Vulnerabilities
+    ```bash
+    php artisan key:generate
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+6. Ejecuta las migraciones de la base de datos y los seeders:
 
-## License
+    ```bash
+    php artisan migrate --seed
+    ```
+
+7. Compila los activos front-end:
+
+    ```bash
+    npm run dev
+    ```
+
+## Uso
+
+1. Inicia el servidor de desarrollo:
+
+    ```bash
+    php artisan serve
+    ```
+
+2. Accede a la aplicación en tu navegador en la dirección `http://localhost:8000`.
+
+## Estructura del Proyecto
+
+```plaintext
+.
+├── app/                # Contiene el núcleo de la aplicación
+├── bootstrap/          # Contiene los archivos de arranque de Laravel
+├── config/             # Contiene los archivos de configuración
+├── database/           # Contiene migraciones, factories y seeders
+├── public/             # Contiene archivos públicos como index.php y activos front-end
+├── resources/          # Contiene vistas, archivos de idioma y activos sin compilar
+├── routes/             # Contiene las definiciones de rutas
+├── storage/            # Contiene archivos generados, como logs y caché
+├── tests/              # Contiene pruebas unitarias y de integración
+├── .env.example        # Ejemplo de archivo de configuración de entorno
+├── artisan             # Interfaz de línea de comandos de Laravel
+├── composer.json       # Archivo de configuración de Composer
+├── package.json        # Archivo de configuración de npm
+└── webpack.mix.js      # Archivo de configuración de Laravel Mix
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
