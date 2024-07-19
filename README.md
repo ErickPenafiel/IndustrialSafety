@@ -105,9 +105,3 @@ Este proyecto es una aplicación web desarrollada con Laravel 10 que tiene como 
 ├── composer.json       # Archivo de configuración de Composer
 ├── package.json        # Archivo de configuración de npm
 └── webpack.mix.js      # Archivo de configuración de Laravel Mix
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-Comandos Graficas
-php artisan make:chart {Name} {Library?}
-php artisan make:chart CapacitacionesChart Chartjs
